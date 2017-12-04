@@ -6,6 +6,8 @@ A sample using the [Architecture Components](https://developer.android.com/arch)
 - LiveData
 - Room
 
+This example uses the third-party libraries [Anko Layouts](https://github.com/Kotlin/anko), [RxJava 2.x](https://github.com/ReactiveX/RxJava), [Dagger2](https://github.com/google/dagger), etc. to organize the project structure.
+
 ![image](https://github.com/fancycww/KotlinAndroidArchitectureComponentsSample/blob/master/demo.gif)
 
 License
