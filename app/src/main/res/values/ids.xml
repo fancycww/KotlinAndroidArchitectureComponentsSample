@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="splash_screen_icon" type="id"/>
+    <item name="background" type="id"/>
+    <item name="icon" type="id"/>
+    <item name="title" type="id"/>
+    <item name="content" type="id"/>
+
+    <!-- Common -->
+    <item name="fragment_container" type="id"/>
+    <item name="swipe_refresh_layout" type="id"/>
+
+    <!-- Order dishes -->
+    <item name="shop_icon" type="id"/>
+    <item name="shop_background" type="id"/>
+    <item name="shop_name" type="id"/>
+    <item name="shop_description" type="id"/>
+    <item name="menu_icon" type="id"/>
+    <item name="menu_name" type="id"/>
+    <item name="menu_description" type="id"/>
+    <item name="floating_action_button_settings" type="id"/>
+    <item name="floating_action_button_search" type="id"/>
+    <item name="floating_action_button_my_order" type="id"/>
+    <item name="menu_list" type="id"/>
+    <item name="label" type="id"/>
+    <item name="input_text" type="id"/>
+    <item name="menu_current_price" type="id"/>
+    <item name="menu_origin_price" type="id"/>
+    <item name="menu_image" type="id"/>
+    <item name="menu_type" type="id"/>
+    <item name="spinner" type="id"/>
+    <item name="category_name" type="id"/>
+    <item name="menu_delete_icon" type="id"/>
+    <item name="menu_type_name" type="id"/>
+    <item name="add_menu_icon" type="id"/>
+    <item name="ordered_menus" type="id"/>
+    <item name="settings_item_icon" type="id"/>
+    <item name="settings_item_name" type="id"/>
+</resources>

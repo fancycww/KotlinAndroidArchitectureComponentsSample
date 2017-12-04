@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">KotlinAndroidArchitectureComponentsSample</string>
+    <string name="refresh_success">刷新成功</string>
+</resources>

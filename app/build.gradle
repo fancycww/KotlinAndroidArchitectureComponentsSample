@@ -1,0 +1,100 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+apply from: "version_numbers.gradle"
+
+android {
+    compileSdkVersion compile_sdk_version
+    defaultConfig {
+        applicationId "com.cww.sample.kotlin"
+        minSdkVersion min_sdk_version
+        targetSdkVersion target_sdk_version
+        versionCode version_code
+        versionName version_name
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags "-std=c++11 -frtti -fexceptions"
+            }
+        }
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+    kotlin {
+        experimental {
+            coroutines 'enable'
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:$support_version"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    implementation "com.android.support:design:$support_version"
+    implementation "com.android.support:recyclerview-v7:$support_version"
+
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    // Anko Commons
+    implementation "org.jetbrains.anko:anko-common:$anko_version"
+    // Anko Layouts
+    implementation "org.jetbrains.anko:anko-sdk25:$anko_version"
+    // sdk15, sdk19, sdk21, sdk23 are also available
+    implementation "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
+    implementation "org.jetbrains.anko:anko-recyclerview-v7:$anko_version"
+    // Coroutine listeners for Anko Layouts
+    implementation "org.jetbrains.anko:anko-sdk25-coroutines:$anko_version"
+    implementation "org.jetbrains.anko:anko-appcompat-v7-coroutines:$anko_version"
+
+    // RxJava 2.x
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava_version"
+    // RxKotlin 2.x
+    implementation "io.reactivex.rxjava2:rxkotlin:$rxkotlin_version"
+    // RxAndroid 2.x
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
+    // RxBinding 2.x
+    implementation "com.jakewharton.rxbinding2:rxbinding:$rxbinding_version"
+
+    // Dagger 2
+    implementation "com.google.dagger:dagger-android:$google_dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$google_dagger_version"
+    kapt "com.google.dagger:dagger-android-processor:$google_dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$google_dagger_version"
+
+    // Android architecture components
+    // Lifecycle
+    implementation "android.arch.lifecycle:extensions:$android_arch_lifecycle_version"
+    kapt "android.arch.lifecycle:compiler:$android_arch_lifecycle_version"
+
+    // Room
+    implementation "android.arch.persistence.room:runtime:$android_arch_room_version"
+    implementation "android.arch.persistence.room:rxjava2:$android_arch_room_version"
+    kapt "android.arch.persistence.room:compiler:$android_arch_room_version"
+
+    // Picasso
+    compile "com.squareup.picasso:picasso:$picasso_version"
+}
