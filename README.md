@@ -6,7 +6,7 @@ A sample using the [Architecture Components](https://developer.android.com/arch)
 - LiveData
 - Room
 
-![image](https://github.com/fancycww/KotlinAndroidArchitectureComponentsSample/master/demo.gif)
+![image](https://github.com/fancycww/KotlinAndroidArchitectureComponentsSample/blob/master/demo.gif)
 
 License
 -------
