@@ -5,7 +5,5 @@ import com.cww.sample.kotlin.common.base.BaseSingleFragmentActivity
 
 class MainActivity : BaseSingleFragmentActivity() {
 
-    override fun provideFragment(): Fragment {
-        return MainFragment.newInstance()
-    }
+    override fun provideFragment(): Fragment = MainFragment.newInstance()
 }
